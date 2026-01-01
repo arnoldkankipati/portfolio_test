@@ -34,7 +34,7 @@ export const portfolioData = {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             focus: "Lorem, ipsum, dolor sit",
             stack: ["React", "LocalStorage", "JavaScript"],
-            github: "#",
+            github: "https://github.com/arnold/task-manager",
         },
         {
             id: 2,
@@ -42,7 +42,7 @@ export const portfolioData = {
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
             focus: "Dolor, amet, consectetur",
             stack: ["JavaScript", "REST API", "HTML", "CSS"],
-            github: "#",
+            github: "https://github.com/arnold/weather-dashboard",
         },
         {
             id: 3,

@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "../Layout/Section";
 import { portfolioData } from "../../data/portfolio";
-import { motion } from "framer-motion";
 
 const Skills = () => {
     const { skills } = portfolioData;
@@ -33,14 +32,10 @@ const Skills = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                     {categories.map((category, idx) => (
-                        <motion.div
+                        <div
                             key={category}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            whileHover={{ y: -5 }}
-                            transition={{ duration: 0.3, delay: idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all"
+                            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 animate-fade-in-up"
+                            style={{ animationDelay: `${idx * 100}ms` }}
                         >
                             <h3 className="text-lg font-semibold text-slate-800 mb-4 pb-2 border-b border-slate-50">
                                 {category}
@@ -57,7 +52,7 @@ const Skills = () => {
                                         </div>
                                     ))}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowRight, Download, ExternalLink } from "lucide-react";
 
 const Hero = () => {
@@ -17,20 +16,10 @@ const Hero = () => {
             <div className="max-w-6xl w-full relative z-10 grid md:grid-cols-2 gap-8 items-center">
 
                 {/* Text Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-left"
-                >
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block mb-3 px-2.5 py-1 bg-indigo-50/80 border border-indigo-100 rounded-full text-primary text-xs font-medium"
-                    >
+                <div className="text-left animate-fade-in">
+                    <div className="inline-block mb-3 px-2.5 py-1 bg-indigo-50/80 border border-indigo-100 rounded-full text-primary text-xs font-medium">
                         👨‍💻 Open to SDE Opportunities
-                    </motion.div>
+                    </div>
 
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-3 leading-tight">
                         Hi, I'm <br />
@@ -49,63 +38,46 @@ const Hero = () => {
 
                     {/* Skills Pills */}
                     <div className="flex flex-wrap gap-2 mb-5">
-                        {["DSA", "Java", "Python", "OOPS", "SQL"].map((skill, idx) => (
-                            <motion.span
+                        {["DSA", "Java", "Python", "OOPS", "SQL"].map((skill) => (
+                            <span
                                 key={skill}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.5 + idx * 0.1 }}
                                 className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:border-indigo-300 hover:text-primary transition-colors"
                             >
                                 {skill}
-                            </motion.span>
+                            </span>
                         ))}
                     </div>
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-3 mb-2">
-                        <motion.a
+                        <a
                             href="#contact"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8 }}
                             className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 hover:scale-105 transition-all flex items-center gap-2"
                         >
                             Contact Me
                             <ArrowRight size={16} />
-                        </motion.a>
-                        <motion.a
+                        </a>
+                        <a
                             href="/resume.pdf"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.9 }}
                             className="px-6 py-2.5 rounded-full bg-white text-slate-900 border border-slate-200 text-sm font-medium hover:border-blue-200 hover:bg-blue-50 hover:-translate-y-1 hover:scale-105 transition-all flex items-center gap-2"
                         >
                             Download CV
                             <Download size={16} />
-                        </motion.a>
+                        </a>
                     </div>
 
                     {/* Optional DSA Profiles Link */}
-                    <motion.a
+                    <a
                         href="#projects"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.1 }}
                         className="inline-flex items-center gap-2 text-xs text-primary hover:text-indigo-700 font-medium group"
                     >
                         View DSA Profiles
                         <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </motion.a>
-                </motion.div>
+                    </a>
+                </div>
 
                 {/* Code Card - Right Side */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative hidden md:block"
-                >
+                <div className="relative hidden md:block animate-fade-in" style={{ animationDelay: '200ms' }}>
                     <div className="relative w-full max-w-md mx-auto">
                         {/* Abstract shape composition */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-purple-600 rounded-2xl rotate-3 opacity-10 animate-float"></div>
@@ -113,61 +85,53 @@ const Hero = () => {
                             <div className="w-full">
                                 {/* SDE-Focused Code Snippet */}
                                 <div className="bg-slate-900 rounded-xl p-4 font-mono text-xs overflow-hidden">
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.6, duration: 0.8 }}
-                                    >
-                                        <p className="text-slate-400">// Lorem Ipsum Dolor Sit</p>
-                                        <p className="mt-1">
-                                            <span className="text-purple-400">const</span>{" "}
-                                            <span className="text-blue-300">Arnold</span>{" "}
-                                            <span className="text-slate-300">=</span>{" "}
-                                            <span className="text-yellow-300">{"{"}</span>
-                                        </p>
-                                        <p className="pl-3 text-slate-300">
-                                            role: <span className="text-green-300">"Lorem Ipsum"</span>,
-                                        </p>
-                                        <p className="pl-3 text-slate-300">
-                                            skills: <span className="text-yellow-300">[</span>
-                                        </p>
-                                        <p className="pl-6 text-green-300">
-                                            "DSA", "Java",
-                                        </p>
-                                        <p className="pl-6 text-green-300">
-                                            "Python", "Problem Solving"
-                                        </p>
-                                        <p className="pl-3 text-yellow-300">],</p>
-                                        <p className="pl-3 text-slate-300">
-                                            focus: <span className="text-green-300">"Dolor Sit Amet"</span>,
-                                        </p>
-                                        <p className="pl-3 text-slate-300">
-                                            <span className="text-blue-300">solve</span>
-                                            <span className="text-slate-400">(</span>
-                                            <span className="text-orange-300">problem</span>
-                                            <span className="text-slate-400">)</span>{" "}
-                                            <span className="text-purple-400">=&gt;</span>{" "}
-                                            <span className="text-yellow-300">{"{"}</span>
-                                        </p>
-                                        <p className="pl-6 text-purple-400">
-                                            return <span className="text-blue-300">optimize</span><span className="text-slate-400">(</span><span className="text-orange-300">problem</span><span className="text-slate-400">)</span>;
-                                        </p>
-                                        <p className="pl-3 text-yellow-300">{"}"}</p>
-                                        <p className="text-yellow-300">{"};"}</p>
-                                    </motion.div>
+                                    <p className="text-slate-400">// Lorem Ipsum Dolor Sit</p>
+                                    <p className="mt-1">
+                                        <span className="text-purple-400">const</span>{" "}
+                                        <span className="text-blue-300">Arnold</span>{" "}
+                                        <span className="text-slate-300">=</span>{" "}
+                                        <span className="text-yellow-300">{"{"}</span>
+                                    </p>
+                                    <p className="pl-3 text-slate-300">
+                                        role: <span className="text-green-300">"Lorem Ipsum"</span>,
+                                    </p>
+                                    <p className="pl-3 text-slate-300">
+                                        skills: <span className="text-yellow-300">[</span>
+                                    </p>
+                                    <p className="pl-6 text-green-300">
+                                        "DSA", "Java",
+                                    </p>
+                                    <p className="pl-6 text-green-300">
+                                        "Python", "Problem Solving"
+                                    </p>
+                                    <p className="pl-3 text-yellow-300">],</p>
+                                    <p className="pl-3 text-slate-300">
+                                        focus: <span className="text-green-300">"Dolor Sit Amet"</span>,
+                                    </p>
+                                    <p className="pl-3 text-slate-300">
+                                        <span className="text-blue-300">solve</span>
+                                        <span className="text-slate-400">(</span>
+                                        <span className="text-orange-300">problem</span>
+                                        <span className="text-slate-400">)</span>{" "}
+                                        <span className="text-purple-400">=&gt;</span>{" "}
+                                        <span className="text-yellow-300">{"{"}</span>
+                                    </p>
+                                    <p className="pl-6 text-purple-400">
+                                        return <span className="text-blue-300">optimize</span><span className="text-slate-400">(</span><span className="text-orange-300">problem</span><span className="text-slate-400">)</span>;
+                                    </p>
+                                    <p className="pl-3 text-yellow-300">{"}"}</p>
+                                    <p className="text-yellow-300">{"};"}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
 
             {/* Scroll indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
+            <div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg animate-fade-in"
+                style={{ animationDelay: '1s' }}
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); } }}
                 role="button"
@@ -177,14 +141,12 @@ const Hero = () => {
                 <div className="flex flex-col items-center gap-2 text-slate-600 hover:text-primary transition-colors">
                     <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>
                     <div className="w-0.5 h-10 bg-slate-200 relative overflow-hidden">
-                        <motion.div
-                            className="absolute top-0 left-0 w-full h-1/2 bg-primary"
-                            animate={{ y: ["-100%", "200%"] }}
-                            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                        <div
+                            className="absolute top-0 left-0 w-full h-1/2 bg-primary animate-pulse"
                         />
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 };

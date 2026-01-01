@@ -2,7 +2,6 @@ import React from "react";
 import Section from "../Layout/Section";
 import { portfolioData } from "../../data/portfolio";
 import { Award } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Certifications = () => {
     const { certifications } = portfolioData;
@@ -25,14 +24,10 @@ const Certifications = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {certifications.map((cert, idx) => (
-                    <motion.div
+                    <div
                         key={cert.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ y: -5 }}
-                        transition={{ duration: 0.3, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all group"
+                        className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group animate-fade-in-up"
+                        style={{ animationDelay: `${idx * 100}ms` }}
                     >
                         <div className="flex items-start gap-4">
                             <div className="p-3 bg-indigo-50 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
@@ -46,7 +41,7 @@ const Certifications = () => {
                                 <p className="text-slate-600 text-xs">{cert.year}</p>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </Section>

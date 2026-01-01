@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -90,33 +89,28 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
-                        id="mobile-menu"
-                        role="navigation"
-                        aria-label="Mobile navigation"
-                    >
-                        <div className="px-6 py-4 flex flex-col space-y-4">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-muted hover:text-primary font-medium text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-                                    onClick={() => setIsOpen(false)}
-                                    aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {isOpen && (
+                <div
+                    className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+                    id="mobile-menu"
+                    role="navigation"
+                    aria-label="Mobile navigation"
+                >
+                    <div className="px-6 py-4 flex flex-col space-y-4">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-muted hover:text-primary font-medium text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                                onClick={() => setIsOpen(false)}
+                                aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };

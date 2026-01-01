@@ -2,7 +2,6 @@ import React from "react";
 import Section from "../Layout/Section";
 import { portfolioData } from "../../data/portfolio";
 import { GraduationCap, Calendar } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Education = () => {
     const { education } = portfolioData;
@@ -22,13 +21,10 @@ const Education = () => {
             <div className="max-w-3xl">
                 <div className="relative border-l-2 border-slate-200 ml-3 space-y-12">
                     {education.map((edu, idx) => (
-                        <motion.div
+                        <div
                             key={edu.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative pl-8 md:pl-12"
+                            className="relative pl-8 md:pl-12 animate-fade-in-up"
+                            style={{ animationDelay: `${idx * 100}ms` }}
                         >
                             {/* Timeline Dot */}
                             <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-primary" />
@@ -69,7 +65,7 @@ const Education = () => {
                                     </div>
                                 </div>
                             )}
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

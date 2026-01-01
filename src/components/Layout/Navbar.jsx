@@ -66,10 +66,11 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className={`font-medium transition-colors text-sm ${activeSection === link.href.substring(1)
+                            className={`font-medium transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded ${activeSection === link.href.substring(1)
                                 ? "text-primary"
                                 : "text-muted hover:text-primary"
                                 }`}
+                            aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
                         >
                             {link.name}
                         </a>
@@ -78,8 +79,11 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-gray-600 focus:outline-none"
+                    className="md:hidden text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg p-1"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-menu"
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
@@ -93,14 +97,18 @@ const Navbar = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+                        id="mobile-menu"
+                        role="navigation"
+                        aria-label="Mobile navigation"
                     >
                         <div className="px-6 py-4 flex flex-col space-y-4">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-muted hover:text-primary font-medium text-lg"
+                                    className="text-muted hover:text-primary font-medium text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
                                     onClick={() => setIsOpen(false)}
+                                    aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
                                 >
                                     {link.name}
                                 </a>

@@ -164,11 +164,15 @@ const Hero = () => {
 
             {/* Scroll indicator */}
             <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); } }}
+                role="button"
+                aria-label="Scroll to About section"
+                tabIndex={0}
             >
                 <div className="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-colors">
                     <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>

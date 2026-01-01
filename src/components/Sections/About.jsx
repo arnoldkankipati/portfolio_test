@@ -20,7 +20,11 @@ const About = () => {
                     <div className="relative aspect-square rounded-2xl bg-slate-100 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                         <img
                             src="/profile.jpg"
-                            alt="Profile"
+                            alt="Arnold Kankipati - Software Developer"
+                            width="500"
+                            height="500"
+                            loading="lazy"
+                            decoding="async"
                             className="object-cover object-top w-full h-full"
                             onError={(e) => {
                                 e.target.style.display = 'none';

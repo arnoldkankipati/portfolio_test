@@ -174,7 +174,7 @@ const Hero = () => {
                 aria-label="Scroll to About section"
                 tabIndex={0}
             >
-                <div className="flex flex-col items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+                <div className="flex flex-col items-center gap-2 text-slate-600 hover:text-primary transition-colors">
                     <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>
                     <div className="w-0.5 h-10 bg-slate-200 relative overflow-hidden">
                         <motion.div

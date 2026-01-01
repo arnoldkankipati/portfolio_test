@@ -26,7 +26,7 @@ const Projects = () => {
                         viewport={{ once: true }}
                         className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300"
                     >
-                        <div className="h-40 bg-slate-200 flex items-center justify-center text-slate-400 group-hover:bg-slate-300 transition-colors">
+                        <div className="h-40 bg-slate-200 flex items-center justify-center text-slate-600 group-hover:bg-slate-300 transition-colors">
                             <span className="font-medium">Project Preview</span>
                             {/* <img src={project.image} alt={project.title} className="w-full h-full object-cover" /> */}
                         </div>

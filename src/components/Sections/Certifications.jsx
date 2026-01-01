@@ -42,7 +42,7 @@ const Certifications = () => {
                                 <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-primary transition-colors">
                                     {cert.name}
                                 </h3>
-                                <p className="text-slate-500 text-sm mb-1">{cert.platform}</p>
+                                <p className="text-slate-600 text-sm mb-1">{cert.platform}</p>
                                 <p className="text-slate-400 text-xs">{cert.year}</p>
                             </div>
                         </div>

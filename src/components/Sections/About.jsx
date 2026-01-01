@@ -59,7 +59,7 @@ const About = () => {
                         {stats.map((stat, index) => (
                             <div key={index} className="border-l-2 border-slate-200 pl-4">
                                 <h4 className="text-3xl font-bold text-slate-900 mb-1">{stat.value}</h4>
-                                <p className="text-sm text-slate-500 font-medium">{stat.label}</p>
+                                <p className="text-sm text-slate-600 font-medium">{stat.label}</p>
                             </div>
                         ))}
                     </div>

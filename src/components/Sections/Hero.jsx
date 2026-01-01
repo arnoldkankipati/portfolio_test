@@ -39,9 +39,9 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <h2 className="text-xl md:text-2xl font-semibold text-slate-700 mb-3 whitespace-nowrap">
+                    <p className="text-xl md:text-2xl font-semibold text-slate-700 mb-3">
                         Lorem Ipsum Dolor Sit
-                    </h2>
+                    </p>
 
                     <p className="text-base text-slate-600 mb-4 max-w-lg leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

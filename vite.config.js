@@ -15,6 +15,10 @@ export default defineConfig({
     },
     minify: 'esbuild',
     cssMinify: true,
+    cssCodeSplit: true, // Split CSS by entry point
     reportCompressedSize: false, // Faster builds
+  },
+  css: {
+    devSourcemap: false,
   },
 })

@@ -61,7 +61,7 @@ const Projects = () => {
                                     className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-primary transition-colors"
                                 >
                                     <Github size={16} />
-                                    Code
+                                    View Code
                                 </a>
                                 {/* Link to live demo if available */}
                                 {/* <a href="#" className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors">

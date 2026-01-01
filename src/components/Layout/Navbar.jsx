@@ -65,7 +65,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className={`font-medium transition-colors text-sm outline-none rounded ${activeSection === link.href.substring(1)
+                            className={`font-medium transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded ${activeSection === link.href.substring(1)
                                 ? "text-primary"
                                 : "text-muted hover:text-primary"
                                 }`}
@@ -78,7 +78,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-gray-600 focus:outline-none rounded-lg p-1"
+                    className="md:hidden text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg p-1"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
                     aria-expanded={isOpen}
@@ -101,7 +101,7 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-muted hover:text-primary font-medium text-lg outline-none rounded"
+                                className="text-muted hover:text-primary font-medium text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
                                 onClick={() => setIsOpen(false)}
                                 aria-current={activeSection === link.href.substring(1) ? "page" : undefined}
                             >

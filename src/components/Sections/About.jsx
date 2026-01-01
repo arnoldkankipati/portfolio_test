@@ -23,7 +23,7 @@ const About = () => {
                             alt="Arnold Kankipati - Software Developer"
                             width="500"
                             height="500"
-                            loading="lazy"
+                            fetchpriority="high"
                             decoding="async"
                             className="object-cover object-top w-full h-full"
                             onError={(e) => {

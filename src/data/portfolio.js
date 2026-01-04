@@ -83,7 +83,7 @@ export const portfolioData = {
         {
             id: 1,
             degree: "B.Tech in Computer Science",
-            institution: "KL University Bachupally",
+            institution: "University",
             year: "2023 - 2027",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             coursework: ["Lorem", "Ipsum", "Dolor", "Sit", "Amet"],

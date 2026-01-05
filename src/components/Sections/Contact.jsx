@@ -58,7 +58,7 @@ const Contact = () => {
                         className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 transition-all"
                     >
                         <Mail size={20} />
-                        k.arnoldraj@gmail.com
+                        arnold@gmail.com
                     </a>
                 </div>
             </div>

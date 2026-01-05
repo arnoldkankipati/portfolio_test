@@ -93,7 +93,7 @@ export const portfolioData = {
         {
             name: "Email",
             icon: Mail,
-            url: "mailto:k.arnoldraj@gmail.com",
+            url: "mailto:arnold@gmail.com",
         },
         {
             name: "GitHub",
